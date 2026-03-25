@@ -1,0 +1,26 @@
+name: Run Telegram Bot
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # Allows manual start
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install pyTelegramBotAPI
+
+      - name: Start Bot
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        run: python telebot_attack.py
+        
