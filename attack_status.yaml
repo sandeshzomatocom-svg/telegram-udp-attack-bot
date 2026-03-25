@@ -1,0 +1,8 @@
+telegram:
+  api_token: "8625781811:AAGymdn1JBdoOj2aba1kpmz9vebH9k3Q0Ko"
+  chat_id: "5894006850"
+attack:
+  target_ip: "4.247.171.24"
+  target_port: 21530
+  attack_duration: 60
+  
